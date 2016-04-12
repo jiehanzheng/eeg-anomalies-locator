@@ -59,6 +59,8 @@ def process_file(filename):
     for large_index in largest_indices:
       print(large_index*winsize/60, "min (score:", decisions[large_index][0], ")")
 
+    sys.stdout.flush()
+
   find_anomaly("Fp1", "F3", 15)
   find_anomaly("F7", "T3", 15)
   find_anomaly("Fp2", "F4", 15)

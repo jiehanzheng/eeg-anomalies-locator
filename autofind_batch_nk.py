@@ -25,6 +25,8 @@ for filename in filenames:
   try:
     print('Processing', edfname, '...', file=sys.stderr)
     process_file(edfname)
+  except KeyboardInterrupt:
+    raise
   except Exception as e:
     print('Exception:', e, file=sys.stderr)
   finally:
