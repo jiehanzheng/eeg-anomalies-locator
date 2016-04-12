@@ -46,7 +46,7 @@ def process_file(filename):
     Examples = np.array(map(extract_features, wave_windows))
 
     print("Training model, assuming no more than", CONTAMINATION, "anomaly...", file=sys.stderr)
-    od = OneClassSVM(nu=CONTAMINATION, kernel='poly', gamma=0.05)
+    od = OneClassSVM(nu=CONTAMINATION, kernel='poly', gamma=0.05, max_iter=100000)
     od.fit(Examples)
 
     decisions = od.decision_function(Examples)
